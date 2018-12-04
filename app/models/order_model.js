@@ -2,11 +2,31 @@ const mongoose = require('mongoose');
 
 const orderSchema  = new mongoose.Schema({
     user : {
-        type : String,
-        ref: User
+        type : new mongoose.Schema({
+            name : {
+                type : String,
+                required :true,
+                minlength:3,
+                maxlength : 50
+            },
+            phone: {
+                type: Number,
+                required : true
+            }
+        }),
+        required: true
     },
     items : {
-        type : String
+        type : new mongoose.Schema({
+            title : {
+                type : String,
+                required :true,
+            },
+        price: {
+            type : Number,
+            required: true
+        }
+        })
     },
     qty : {
         type : Number

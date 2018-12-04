@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const itemSchema = new mongoose.Schema({
-    Title :{
+    title :{
         type : String
     },
-    Price : {
+    price : {
         Type : Number
     },
     inStock : {

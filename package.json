@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/storage": "^2.3.0",
     "express": "^4.16.3",
+    "fawn": "^2.1.5",
+    "google-auth-library": "^2.0.1",
+    "joi": "^13.6.0",
+    "joi-objectid": "^2.0.0",
     "mongoose": "^5.2.17"
   }
 }

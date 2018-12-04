@@ -3,8 +3,7 @@ const config = require('../config');
 
 module.exports =(app) => {
   app.mdb = config.mdb;
-  mongoose.set('debug', true);
-
+  mongoose.connect(app.mdb,{ useNewUrlParser: true});  //{ server: { auto_reconnect: true } }
   const db = mongoose.connection;
   db.on('connecting', () => {
     console.log('connecting to MongoDB...');
@@ -31,8 +30,8 @@ module.exports =(app) => {
   db.on('disconnected', () => {
     app.disable('mongodb');
     console.log('MongoDB disconnected!');
-    setTimeout(()=>{mongoose.connect(app.mdb, { server: { auto_reconnect: true } })},500)
+    setTimeout(()=>{mongoose.connect(app.mdb, { server: { auto_reconnect: true } } )},500)
   });
   
-  mongoose.connect(app.mdb, { server: { auto_reconnect: true } });
+  
 };

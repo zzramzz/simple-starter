@@ -5,7 +5,7 @@ const app = require('./index')
 const serverConfig = config.server;
 
 const server = {
-    start : function start() {
+    start : function() {
         const server = http.createServer(app);
         server.listen(serverConfig.port);
         console.log(`server running at${serverConfig.port}`);
